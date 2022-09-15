@@ -1,6 +1,6 @@
 {
-  "appTitle": "flutter_app1",
+  "appTitle": "Calculator",
   "@appTitle": {
-    "description": "The title of the application"
+    "description": "A simple Calculator made in dart with the flutter framework."
   }
 }
