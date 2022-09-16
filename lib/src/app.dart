@@ -1,12 +1,13 @@
-//import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'calculator.dart';
+import "calculator.dart";
 
 /// The Widget that configures your application.
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class CalculatorApp extends StatelessWidget {
+  const CalculatorApp({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
       ],
       supportedLocales: const [
         Locale('en', ''), // English, no country code
-        Locale('es', ''), // Spanish, no country code
+        Locale('es', ''), // Spanish, no courtry code
       ],
 
       // Use AppLocalizations to configure the correct application title
@@ -39,9 +40,12 @@ class MyApp extends StatelessWidget {
       onGenerateTitle: (BuildContext context) =>
           AppLocalizations.of(context)!.appTitle,
 
-
-      home: const Scaffold(
-        body: Calculator(),
+      home: Scaffold(
+        appBar: AppBar(
+          centerTitle: true,
+          title: const Text("Calculator App"),
+        ),
+        body: const Calculator(),
       ),
     );
   }
