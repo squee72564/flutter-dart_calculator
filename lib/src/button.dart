@@ -12,7 +12,21 @@ class CalcButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: buttontapped,
-      child: ,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(10.0),
+        child: Container(
+          color: color,
+          child: Text(
+            buttonText,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: textColor,
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

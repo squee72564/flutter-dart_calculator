@@ -10,7 +10,7 @@ class Calculator extends StatefulWidget {
 
 class _CalculatorState extends State<Calculator> {
   var input = '';
-  var asnwer = '';
+  var answer = '';
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +27,18 @@ class _CalculatorState extends State<Calculator> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget> [
                 CalcButton(
+                  buttontapped: () {
+                    setState(() {
+                      input = '';
+                      answer = '0';
+                    });
+                  }
                   buttonText: "Del",
                   color: Color.fromARGB(153, 87, 159, 77),
+                  textColor: ,
+                  buttonText: ,
+                  buttontapped: ,
+
                 ),
               ],
             ),
