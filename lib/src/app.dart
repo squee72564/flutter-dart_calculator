@@ -1,4 +1,4 @@
-import 'package:flutter/foundation.dart';
+//import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
           AppLocalizations.of(context)!.appTitle,
 
 
-      home: Scaffold(
+      home: const Scaffold(
         body: Calculator(),
       ),
     );

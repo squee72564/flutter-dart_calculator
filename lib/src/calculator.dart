@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app1/src/button.dart';
 
 class Calculator extends StatefulWidget {
+  const Calculator({super.key});
+
   @override
   _CalculatorState createState() => _CalculatorState();
 }
@@ -16,7 +19,23 @@ class _CalculatorState extends State<Calculator> {
         centerTitle: true,
         title: const Text("Calculator App"),
       ),
-      backgroundColor: Color.fromARGB(255, 167, 200, 227),
+      backgroundColor: const Color.fromARGB(255, 167, 200, 227),
+      body: Center(
+        child: Column(
+          children: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget> [
+                CalcButton(
+                  buttonText: "Del",
+                  color: Color.fromARGB(153, 87, 159, 77),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+      
       );
   }
 }
