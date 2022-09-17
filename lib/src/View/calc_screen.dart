@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app1/src/calcButtons.dart';
+import 'package:flutter_app1/src/View/calc_buttons.dart';
 
 class CalcDisplay extends StatefulWidget {
   const CalcDisplay({super.key});

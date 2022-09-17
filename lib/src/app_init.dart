@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import "calculator.dart";
+import 'View/calculator_ui.dart';
 
-/// The Widget that configures your application.
-class CalculatorApp extends StatelessWidget {
-  const CalculatorApp({
+/// The Widget that initially configures the application language settings.
+class CalculatorAppConfigure extends StatelessWidget {
+  const CalculatorAppConfigure({
     super.key,
   });
 
@@ -43,9 +43,9 @@ class CalculatorApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: const Text("Calculator App"),
+          title: const Text("Calculator"),
         ),
-        body: const Calculator(),
+        body: CalculatorUI(),
       ),
     );
   }

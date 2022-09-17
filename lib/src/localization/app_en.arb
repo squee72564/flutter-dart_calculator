@@ -1,5 +1,5 @@
 {
-  "appTitle": "Calculator",
+  "appTitle": "CS 4800.01 Calculator",
   "@appTitle": {
     "description": "A simple Calculator made in dart with the flutter framework."
   }

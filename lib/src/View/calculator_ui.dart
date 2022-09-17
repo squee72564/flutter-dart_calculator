@@ -1,18 +1,21 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_app1/src/calcButtons.dart';
+import 'package:flutter_app1/src/View/calc_buttons.dart';
+import 'package:flutter_app1/src/Model/calculator.dart';
+import 'package:flutter_app1/src/Controller/calculator_controller.dart';
 
-class Calculator extends StatefulWidget {
-  const Calculator({super.key});
+
+class CalculatorUI extends StatefulWidget {
+  const CalculatorUI({super.key});
 
   @override
-  _CalculatorState createState() => _CalculatorState();
+  _CalculatorUIState createState() => _CalculatorUIState();
 }
 
-class _CalculatorState extends State<Calculator> {
+class _CalculatorUIState extends State<CalculatorUI> {
   var input = '';
   var answer = '';
+  final Calculator calculator = Calculator();
+  final CalculatorController calculatorController = CalculatorController();
 
   @override
   Widget build(BuildContext context) {
@@ -38,10 +41,10 @@ class _CalculatorState extends State<Calculator> {
                         color: const Color.fromARGB(255, 0, 0, 0),
                         border: Border.all(),
                       ),
-                      child: const Center(
+                      child: Center(
                         child: Text(
-                          "Testing",
-                          style: TextStyle(
+                          answer,
+                          style: const TextStyle(
                             color: Colors.yellow,
                             fontSize: 25,
                             fontWeight: FontWeight.bold,
@@ -55,16 +58,17 @@ class _CalculatorState extends State<Calculator> {
                       Color.fromARGB(255, 156, 167, 177),
                       Color.fromARGB(255, 156, 167, 177),
                       Color.fromARGB(255, 156, 167, 177),
-                      Color.fromARGB(255, 206, 214, 221)
+                      Color.fromARGB(255, 206, 214, 221),
                     ],
                     buttonTexts: ["CE", "C", " ", "DEL"],
+                    buttonIndex: ,
                   ),
                   const CalcRow(
                     buttonColors: [
                       Color.fromARGB(255, 156, 167, 177),
                       Color.fromARGB(255, 156, 167, 177),
                       Color.fromARGB(255, 156, 167, 177),
-                      Color.fromARGB(255, 206, 214, 221)
+                      Color.fromARGB(255, 206, 214, 221),
                     ],
                     buttonTexts: ["1/x", "x^2", "sqrt", "/"],
                   ),
@@ -73,7 +77,7 @@ class _CalculatorState extends State<Calculator> {
                       Color.fromARGB(255, 156, 167, 177),
                       Color.fromARGB(255, 156, 167, 177),
                       Color.fromARGB(255, 156, 167, 177),
-                      Color.fromARGB(255, 206, 214, 221)
+                      Color.fromARGB(255, 206, 214, 221),
                     ],
                     buttonTexts: ["7", "8", "9", "x"],
                   ),
@@ -82,7 +86,7 @@ class _CalculatorState extends State<Calculator> {
                       Color.fromARGB(255, 156, 167, 177),
                       Color.fromARGB(255, 156, 167, 177),
                       Color.fromARGB(255, 156, 167, 177),
-                      Color.fromARGB(255, 206, 214, 221)
+                      Color.fromARGB(255, 206, 214, 221),
                     ],
                     buttonTexts: ["4", "5", "6", "-"],
                   ),
@@ -91,7 +95,7 @@ class _CalculatorState extends State<Calculator> {
                       Color.fromARGB(255, 156, 167, 177),
                       Color.fromARGB(255, 156, 167, 177),
                       Color.fromARGB(255, 156, 167, 177),
-                      Color.fromARGB(255, 206, 214, 221)
+                      Color.fromARGB(255, 206, 214, 221),
                     ],
                     buttonTexts: ["1", "2", "3", "+"],
                   ),
@@ -100,7 +104,7 @@ class _CalculatorState extends State<Calculator> {
                       Color.fromARGB(255, 156, 167, 177),
                       Color.fromARGB(255, 156, 167, 177),
                       Color.fromARGB(255, 156, 167, 177),
-                      Color.fromARGB(255, 206, 214, 221)
+                      Color.fromARGB(255, 206, 214, 221),
                     ],
                     buttonTexts: ["+/-", "0", ".", "="],
                   ),

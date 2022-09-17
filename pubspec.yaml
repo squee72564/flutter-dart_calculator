@@ -10,10 +10,12 @@ environment:
   sdk: '>=2.18.0 <3.0.0'
 
 dependencies:
+  expressions: ^0.2.4
   flutter:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  mate: ^0.0.5
 
 dev_dependencies:
   flutter_test:
