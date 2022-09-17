@@ -23,8 +23,8 @@ class CalcButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(7.0),
         child: Container(
           padding: const EdgeInsets.all(10.0),
-          width: 50,
-          height: 50,
+          width: 100,
+          height: 100,
           decoration: BoxDecoration(
             color: color,
             border: Border.all(),
