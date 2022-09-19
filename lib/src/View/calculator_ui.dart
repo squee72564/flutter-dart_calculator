@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app1/src/View/calc_buttons.dart';
-import 'package:flutter_app1/src/Model/calculator.dart';
-import 'package:flutter_app1/src/Controller/calculator_controller.dart';
-
 
 class CalculatorUI extends StatefulWidget {
-  const CalculatorUI({super.key});
+  final calc;
+  final calcController;
+
+  const CalculatorUI({
+    super.key,
+    required this.calc,
+    required this.calcController,
+  });
 
   @override
   _CalculatorUIState createState() => _CalculatorUIState();
@@ -14,8 +18,6 @@ class CalculatorUI extends StatefulWidget {
 class _CalculatorUIState extends State<CalculatorUI> {
   var input = '';
   var answer = '';
-  final Calculator calculator = Calculator();
-  final CalculatorController calculatorController = CalculatorController();
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +45,7 @@ class _CalculatorUIState extends State<CalculatorUI> {
                       ),
                       child: Center(
                         child: Text(
-                          answer,
+                          answer, 
                           style: const TextStyle(
                             color: Colors.yellow,
                             fontSize: 25,
@@ -53,60 +55,60 @@ class _CalculatorUIState extends State<CalculatorUI> {
                       ),
                     ),
                   ),
-                  const CalcRow(
-                    buttonColors: [
+                  CalcRow(
+                    buttonColors: const [
                       Color.fromARGB(255, 156, 167, 177),
                       Color.fromARGB(255, 156, 167, 177),
                       Color.fromARGB(255, 156, 167, 177),
                       Color.fromARGB(255, 206, 214, 221),
                     ],
-                    buttonTexts: ["CE", "C", " ", "DEL"],
-                    buttonIndex: ,
+                    buttonTexts: const ["CE", "C", " ", "DEL"],
+                    
                   ),
-                  const CalcRow(
-                    buttonColors: [
+                   CalcRow(
+                    buttonColors: const [
                       Color.fromARGB(255, 156, 167, 177),
                       Color.fromARGB(255, 156, 167, 177),
                       Color.fromARGB(255, 156, 167, 177),
                       Color.fromARGB(255, 206, 214, 221),
                     ],
-                    buttonTexts: ["1/x", "x^2", "sqrt", "/"],
+                    buttonTexts: const ["1/x", "x^2", "sqrt", "/"],
                   ),
-                  const CalcRow(
-                    buttonColors: [
+                   CalcRow(
+                    buttonColors: const [
                       Color.fromARGB(255, 156, 167, 177),
                       Color.fromARGB(255, 156, 167, 177),
                       Color.fromARGB(255, 156, 167, 177),
                       Color.fromARGB(255, 206, 214, 221),
                     ],
-                    buttonTexts: ["7", "8", "9", "x"],
+                    buttonTexts: const ["7", "8", "9", "x"],
                   ),
-                  const CalcRow(
-                    buttonColors: [
+                   CalcRow(
+                    buttonColors: const [
                       Color.fromARGB(255, 156, 167, 177),
                       Color.fromARGB(255, 156, 167, 177),
                       Color.fromARGB(255, 156, 167, 177),
                       Color.fromARGB(255, 206, 214, 221),
                     ],
-                    buttonTexts: ["4", "5", "6", "-"],
+                    buttonTexts: const ["4", "5", "6", "-"],
                   ),
-                  const CalcRow(
-                    buttonColors: [
+                   CalcRow(
+                    buttonColors: const [
                       Color.fromARGB(255, 156, 167, 177),
                       Color.fromARGB(255, 156, 167, 177),
                       Color.fromARGB(255, 156, 167, 177),
                       Color.fromARGB(255, 206, 214, 221),
                     ],
-                    buttonTexts: ["1", "2", "3", "+"],
+                    buttonTexts: const ["1", "2", "3", "+"],
                   ),
-                  const CalcRow(
-                    buttonColors: [
+                   CalcRow(
+                    buttonColors: const [
                       Color.fromARGB(255, 156, 167, 177),
                       Color.fromARGB(255, 156, 167, 177),
                       Color.fromARGB(255, 156, 167, 177),
                       Color.fromARGB(255, 206, 214, 221),
                     ],
-                    buttonTexts: ["+/-", "0", ".", "="],
+                    buttonTexts: const ["+/-", "0", ".", "="],
                   ),
                 ],
               ),

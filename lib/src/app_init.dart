@@ -5,8 +5,13 @@ import 'View/calculator_ui.dart';
 
 /// The Widget that initially configures the application language settings.
 class CalculatorAppConfigure extends StatelessWidget {
+  final calc;
+  final calcController;
+
   const CalculatorAppConfigure({
     super.key,
+    required this.calc,
+    required this.calcController,
   });
 
   @override
@@ -45,7 +50,7 @@ class CalculatorAppConfigure extends StatelessWidget {
           centerTitle: true,
           title: const Text("Calculator"),
         ),
-        body: CalculatorUI(),
+        body: CalculatorUI(calc: calc, calcController: calcController,),
       ),
     );
   }

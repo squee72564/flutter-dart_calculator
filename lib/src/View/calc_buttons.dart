@@ -45,48 +45,63 @@ class CalcButton extends StatelessWidget {
 }
 
 //Widget for row of 4 calculator buttons
-class CalcRow extends StatelessWidget {
+class CalcRow extends StatefulWidget {
   final List<Color> buttonColors;
   final List<String> buttonTexts;
-  final button1Tapped;
-  final button2Tapped;
-  final button3Tapped;
-  final button4Tapped;
-
-  const CalcRow({
+  late final int buttonTapped;
+   
+  CalcRow({
     super.key,
     required this.buttonColors,
     required this.buttonTexts,
-    required this.button1Tapped,
-    required this.button2Tapped,
-    required this.button3Tapped,
-    required this.button4Tapped,
   });
 
-  @override
+@override
+  _CalcRowState createState() => _CalcRowState();
+}
+
+class _CalcRowState extends State<CalcRow> {
+
+@override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         CalcButton(
-          color: buttonColors[0],
-          buttonText: buttonTexts[0],
-          buttontapped: button1Tapped,
+          color: widget.buttonColors[0],
+          buttonText: widget.buttonTexts[0],
+          buttontapped: () {
+            setState(() {
+              
+            });
+          },
         ),
         CalcButton(
-          color: buttonColors[1],
-          buttonText: buttonTexts[1],
-          buttontapped: button2Tapped,
+          color: widget.buttonColors[1],
+          buttonText: widget.buttonTexts[1],
+          buttontapped: () {
+            setState(() {
+              
+            });
+          },
         ),
         CalcButton(
-          color: buttonColors[2],
-          buttonText: buttonTexts[2],
-          buttontapped: button3Tapped,
+          color: widget.buttonColors[2],
+          buttonText: widget.buttonTexts[2],
+          buttontapped: () {
+            setState(() {
+              
+            });
+          },
         ),
         CalcButton(
-          color: buttonColors[3],
-          buttonText: buttonTexts[3],
-          buttontapped: button4Tapped,
+          color: widget.buttonColors[3],
+          buttonText: widget.buttonTexts[3],
+          buttontapped: () {
+            setState(() {
+              
+            });
+          },
         ),
       ],
     );
