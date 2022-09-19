@@ -45,12 +45,19 @@ class CalculatorAppConfigure extends StatelessWidget {
       onGenerateTitle: (BuildContext context) =>
           AppLocalizations.of(context)!.appTitle,
 
+      theme: new ThemeData(
+        scaffoldBackgroundColor: Colors.grey[700],
+      ),
+
       home: Scaffold(
         appBar: AppBar(
           centerTitle: true,
           title: const Text("Calculator"),
         ),
-        body: CalculatorUI(calc: calc, calcController: calcController,),
+        body: CalculatorUI(
+          calc: calc,
+          calcController: calcController,
+        ),
       ),
     );
   }

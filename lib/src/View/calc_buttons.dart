@@ -16,26 +16,27 @@ class CalcButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: buttontapped,
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(7.0),
-        child: Container(
-          padding: const EdgeInsets.all(10.0),
-          width: 100,
-          height: 100,
-          decoration: BoxDecoration(
-            color: color,
-            border: Border.all(),
+    return Expanded(
+      child: Container(
+        height: 80,
+        margin: const EdgeInsets.all(4),
+        child: ElevatedButton(
+          onPressed: buttontapped,
+          style: ElevatedButton.styleFrom(
+            backgroundColor: const Color.fromARGB(255, 156, 167, 177),
+            elevation: 0,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
           ),
-          child: FittedBox(
-            child: Text(
-              buttonText,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: textColor,
-                fontWeight: FontWeight.bold,
-              ),
+          child: Text(
+            buttonText,
+            overflow: TextOverflow.fade,
+            textScaleFactor: 2.5,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: textColor,
+              fontWeight: FontWeight.bold,
             ),
           ),
         ),
@@ -48,21 +49,20 @@ class CalcButton extends StatelessWidget {
 class CalcRow extends StatefulWidget {
   final List<Color> buttonColors;
   final List<String> buttonTexts;
-  late final int buttonTapped;
-   
+  late String buttonTapped;
+
   CalcRow({
     super.key,
     required this.buttonColors,
     required this.buttonTexts,
   });
 
-@override
+  @override
   _CalcRowState createState() => _CalcRowState();
 }
 
 class _CalcRowState extends State<CalcRow> {
-
-@override
+  @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -71,36 +71,28 @@ class _CalcRowState extends State<CalcRow> {
           color: widget.buttonColors[0],
           buttonText: widget.buttonTexts[0],
           buttontapped: () {
-            setState(() {
-              
-            });
+            setState(() {});
           },
         ),
         CalcButton(
           color: widget.buttonColors[1],
           buttonText: widget.buttonTexts[1],
           buttontapped: () {
-            setState(() {
-              
-            });
+            setState(() {});
           },
         ),
         CalcButton(
           color: widget.buttonColors[2],
           buttonText: widget.buttonTexts[2],
           buttontapped: () {
-            setState(() {
-              
-            });
+            setState(() {});
           },
         ),
         CalcButton(
           color: widget.buttonColors[3],
           buttonText: widget.buttonTexts[3],
           buttontapped: () {
-            setState(() {
-              
-            });
+            setState(() {});
           },
         ),
       ],

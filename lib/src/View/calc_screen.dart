@@ -11,7 +11,22 @@ class CalcDisplay extends StatefulWidget {
 class _CalcDisplayState extends State<CalcDisplay> {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    return Expanded(
+      child: Container(
+        constraints: BoxConstraints.expand(),
+        color: Colors.black,
+        padding: const EdgeInsets.all(10),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'wqeqweqweqwe',
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(color: Colors.white, fontSize: 36),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

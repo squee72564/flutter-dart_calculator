@@ -10,16 +10,16 @@ class Calculator {
     answerBuffer = result.toString();
     return '0';
   }
-  
-  getStringBuffer(){
-    return stringBuffer; 
+
+  getStringBuffer() {
+    return stringBuffer;
   }
 
-  getAnswerBuffer(){
+  getAnswerBuffer() {
     return answerBuffer;
   }
 
-  void addCharacter(String s){
+  void addCharacter(String s) {
     stringBuffer += s;
   }
 }
