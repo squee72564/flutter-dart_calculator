@@ -7,8 +7,5 @@ void main() async {
   final Calculator calculator = Calculator();
   final CalculatorController calculatorController = CalculatorController();
 
-  runApp(CalculatorAppConfigure(
-    calc: calculator,
-    calcController: calculatorController,
-  ));
+  runApp(CalculatorAppConfigure());
 }

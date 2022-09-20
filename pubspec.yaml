@@ -14,8 +14,7 @@ dependencies:
   expressions: ^0.2.4
   flutter:
     sdk: flutter
-  flutter_hooks: ^0.18.0
-  hooks_riverpod: ^2.0.0-dev.9
+  flutter_riverpod: ^2.0.0-dev.9
   flutter_localizations:
     sdk: flutter
   mate: ^0.0.5

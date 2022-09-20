@@ -5,13 +5,8 @@ import 'View/calculator_ui.dart';
 
 /// The Widget that initially configures the application language settings.
 class CalculatorAppConfigure extends StatelessWidget {
-  final calc;
-  final calcController;
-
   const CalculatorAppConfigure({
     super.key,
-    required this.calc,
-    required this.calcController,
   });
 
   @override
@@ -45,19 +40,27 @@ class CalculatorAppConfigure extends StatelessWidget {
       onGenerateTitle: (BuildContext context) =>
           AppLocalizations.of(context)!.appTitle,
 
-      theme: new ThemeData(
+      theme: ThemeData(
         scaffoldBackgroundColor: Colors.grey[700],
       ),
 
       home: Scaffold(
         appBar: AppBar(
-          centerTitle: true,
-          title: const Text("Calculator"),
+          centerTitle: false,
+          elevation: 0,
+          backgroundColor: Colors.transparent,
+          title: Container(
+            margin: const EdgeInsets.only(left: 7),
+            child: const Text(
+              "Calculator App CS4800",
+              style: TextStyle(
+                fontSize: 15,
+                fontStyle: FontStyle.italic,
+              ),
+            ),
+          ),
         ),
-        body: CalculatorUI(
-          calc: calc,
-          calcController: calcController,
-        ),
+        body: CalculatorUI(),
       ),
     );
   }

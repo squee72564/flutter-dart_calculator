@@ -23,16 +23,16 @@ class CalcButton extends StatelessWidget {
         child: ElevatedButton(
           onPressed: buttontapped,
           style: ElevatedButton.styleFrom(
-            backgroundColor: const Color.fromARGB(255, 156, 167, 177),
+            backgroundColor: color,
             elevation: 0,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(11),
             ),
           ),
           child: Text(
             buttonText,
             overflow: TextOverflow.fade,
-            textScaleFactor: 2.5,
+            textScaleFactor: 2.1,
             textAlign: TextAlign.center,
             style: TextStyle(
               color: textColor,
