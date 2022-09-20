@@ -82,9 +82,16 @@ class CalculatorNotifier extends StateNotifier<Calculator> {
                 .substring(0, state.stringBuffer.length - 1);
           }
         case '=':
+          state.stringBuffer += '+ 0';
           final double? result = parser.calculate(state.stringBuffer);
-          state.answerBuffer = result.toString();
-          return '0';
+          if (result != null) {
+            state.answerBuffer = result.toString();
+            return '0';
+          } else {
+            state.answerBuffer = 'err =';
+            return '0';
+          }
+
         case 'x^2':
           state.stringBuffer += '+ 0';
           final double? result = parser.calculate(state.stringBuffer);
