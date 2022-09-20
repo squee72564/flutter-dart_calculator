@@ -62,7 +62,7 @@ class CalculatorAppConfigure extends StatelessWidget {
               ),
             ),
           ),
-          body: CalculatorUI(),
+          body: const CalculatorUI(),
         ),
       ),
     );
