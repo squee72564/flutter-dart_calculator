@@ -24,6 +24,9 @@ class _CalculatorUIState extends State<CalculatorUI> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               CalcDisplay(),
+              Spacer(
+                flex: 1,
+              ),
               CalcRow(
                 //CE C " " DEL
                 buttonColors: const [

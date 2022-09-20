@@ -1,25 +1,18 @@
-import 'package:mate/mate.dart';
-
 class Calculator {
-  var stringBuffer = '';
-  var answerBuffer = '';
-  final Mate parser = Mate();
+  String stringBuffer;
+  String answerBuffer;
 
-  String _evaluateExpression() {
-    final result = parser.calculate(stringBuffer);
-    answerBuffer = result.toString();
-    return '0';
-  }
+  Calculator({
+    this.stringBuffer = '0',
+    this.answerBuffer = '0',
+  });
 
-  getStringBuffer() {
-    return stringBuffer;
-  }
-
-  getAnswerBuffer() {
-    return answerBuffer;
-  }
-
-  void addCharacter(String s) {
-    stringBuffer += s;
-  }
+  Calculator copy({
+    required String stringBuffer,
+    required String answerBuffer,
+  }) =>
+      Calculator(
+        stringBuffer: stringBuffer,
+        answerBuffer: answerBuffer,
+      );
 }

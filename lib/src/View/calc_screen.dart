@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app1/src/View/calc_buttons.dart';
+import 'package:flutter_app1/src/Provider/calculator_provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class CalcDisplay extends StatefulWidget {
+class CalcDisplay extends ConsumerStatefulWidget {
   const CalcDisplay({super.key});
 
   @override
-  State<StatefulWidget> createState() => _CalcDisplayState();
+  _CalcDisplayState createState() => _CalcDisplayState();
 }
 
-class _CalcDisplayState extends State<CalcDisplay> {
+class _CalcDisplayState extends ConsumerState<CalcDisplay> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -19,8 +20,9 @@ class _CalcDisplayState extends State<CalcDisplay> {
         maxWidth: double.infinity,
       ),
       padding: const EdgeInsets.all(30),
-      decoration: const BoxDecoration(
-        gradient: RadialGradient(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        gradient: const RadialGradient(
           center: Alignment(0, 0),
           radius: .9,
           colors: <Color>[
@@ -30,25 +32,30 @@ class _CalcDisplayState extends State<CalcDisplay> {
           stops: <double>[0.9, 1.0],
         ),
       ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Text(
-            '1',
-            overflow: TextOverflow.ellipsis,
-            style: TextStyle(color: Colors.white, fontSize: 25),
-            maxLines: 3,
-          ),
-          Spacer(flex: 2),
-          Text(
-            '1',
-            overflow: TextOverflow.ellipsis,
-            style: TextStyle(
-                color: Color.fromARGB(199, 255, 255, 255), fontSize: 25),
-            maxLines: 3,
-          ),
-        ],
+      child: Consumer(
+        builder: (context, ref, child) {
+          final state = ref.watch(calculatorProvider);
+          return Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(
+                state.stringBuffer,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(color: Colors.white, fontSize: 25),
+                maxLines: 3,
+              ),
+              Spacer(flex: 2),
+              Text(
+                state.answerBuffer,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                    color: Color.fromARGB(199, 255, 255, 255), fontSize: 25),
+                maxLines: 3,
+              ),
+            ],
+          );
+        },
       ),
     );
   }
