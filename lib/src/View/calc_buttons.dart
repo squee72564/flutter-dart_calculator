@@ -112,6 +112,6 @@ class _CalcRowState extends ConsumerState<CalcRow> {
   void onButtonClick(String buttonCharacter) {
     final calculator = ref.read(calculatorProvider.notifier);
 
-    calculator.appendButton(buttonCharacter);
+    calculator.evaluateButtonPress(buttonCharacter);
   }
 }

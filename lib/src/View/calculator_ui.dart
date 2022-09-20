@@ -55,7 +55,7 @@ class _CalculatorUIState extends State<CalculatorUI> {
                   Color.fromARGB(255, 63, 65, 66),
                   Color.fromARGB(255, 90, 92, 95),
                 ],
-                buttonTexts: const ["7", "8", "9", "x"],
+                buttonTexts: const ["7", "8", "9", "*"],
               ),
               CalcRow(
                 // 4 5 6 -

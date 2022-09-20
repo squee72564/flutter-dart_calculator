@@ -42,7 +42,7 @@ class _CalcDisplayState extends ConsumerState<CalcDisplay> {
               Text(
                 state.stringBuffer,
                 overflow: TextOverflow.ellipsis,
-                style: TextStyle(color: Colors.white, fontSize: 25),
+                style: TextStyle(color: Colors.white, fontSize: 30),
                 maxLines: 3,
               ),
               Spacer(flex: 2),
@@ -51,7 +51,7 @@ class _CalcDisplayState extends ConsumerState<CalcDisplay> {
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(
                     color: Color.fromARGB(199, 255, 255, 255), fontSize: 25),
-                maxLines: 3,
+                maxLines: 1,
               ),
             ],
           );
