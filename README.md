@@ -1,16 +1,13 @@
 # Calculator Application
 
-A new Flutter project.
+A simple calculator app created for CS4800, Cal Poly Pomona.
+Made using the flutter framework.
 
-## Getting Started
+Other resourced used in the project are listed:
+https://github.com/google/flutter-desktop-embedding.git
+https://pub.dev/packages/flutter_riverpod
+https://pub.dev/documentation/mate/latest/
 
-This project is a starting point for a Flutter application that follows the
-[simple app state management
-tutorial](https://flutter.dev/docs/development/data-and-backend/state-mgmt/simple).
-
-For help getting started with Flutter development, view the
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
 
 ## Assets
 
