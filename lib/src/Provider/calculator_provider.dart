@@ -83,48 +83,71 @@ class CalculatorNotifier extends StateNotifier<Calculator> {
                 .substring(0, state.stringBuffer.length - 1);
           }
         case '=':
-          state.stringBuffer += '+ 0';
-          final double? result = parser.calculate(state.stringBuffer);
-          if (result != null) {
-            state.answerBuffer = result.toString();
-            return '0';
+          if (state.stringBuffer
+                    .substring(state.stringBuffer.length - 1)
+                    .contains(RegExp(r'[+-/*]'))) {
+              return state.stringBuffer;
           } else {
-            state.answerBuffer = 'err =';
-            return '0';
+            state.stringBuffer += '+ 0';
+            final double? result = parser.calculate(state.stringBuffer);
+            if (result != null) {
+              state.answerBuffer = result.toString();
+              return '0';
+            } else {
+              state.answerBuffer = 'err =';
+              return '0';
+            }
           }
-
         case 'x^2':
-          state.stringBuffer += '+ 0';
-          final double? result = parser.calculate(state.stringBuffer);
-          if (result != null) {
-            double temp = result * result;
-            state.answerBuffer = temp.toString();
-            return '0';
+          if (state.stringBuffer
+                    .substring(state.stringBuffer.length - 1)
+                    .contains(RegExp(r'[+-/*]'))) {
+              return state.stringBuffer;
           } else {
-            state.answerBuffer = 'err x^2';
-            return '0';
+            state.stringBuffer += '+ 0';
+            final double? result = parser.calculate(state.stringBuffer);
+            if (result != null) {
+              double temp = result * result;
+              state.answerBuffer = temp.toString();
+              return '0';
+            } else {
+              state.answerBuffer = 'err x^2';
+              return '0';
+            }
           }
         case '1/x':
-          state.stringBuffer += '+ 0';
-          final double? result = parser.calculate(state.stringBuffer);
-          if (result != null) {
-            double temp = 1 / result;
-            state.answerBuffer = temp.toString();
-            return '0';
+          if (state.stringBuffer
+                    .substring(state.stringBuffer.length - 1)
+                    .contains(RegExp(r'[+-/*]'))) {
+              return state.stringBuffer;
           } else {
-            state.answerBuffer = 'err 1/x';
-            return '0';
+            state.stringBuffer += '+ 0';
+            final double? result = parser.calculate(state.stringBuffer);
+            if (result != null) {
+              double temp = 1 / result;
+              state.answerBuffer = temp.toString();
+              return '0';
+            } else {
+              state.answerBuffer = 'err 1/x';
+              return '0';
+            }
           }
         case 'sqrt':
-          state.stringBuffer += '+ 0';
-          final double? result = parser.calculate(state.stringBuffer);
-          if (result != null) {
-            double temp = sqrt(result);
-            state.answerBuffer = temp.toString();
-            return '0';
+          if (state.stringBuffer
+                    .substring(state.stringBuffer.length - 1)
+                    .contains(RegExp(r'[+-/*]'))) {
+              return state.stringBuffer;
           } else {
-            state.answerBuffer = 'err sqrt';
-            return '0';
+            state.stringBuffer += '+ 0';
+            final double? result = parser.calculate(state.stringBuffer);
+            if (result != null) {
+              double temp = sqrt(result);
+              state.answerBuffer = temp.toString();
+              return '0';
+            } else {
+              state.answerBuffer = 'err sqrt';
+              return '0';
+            }
           }
         case 'C':
           state.answerBuffer = '0';
