@@ -3,7 +3,7 @@
 A simple calculator app created for CS4800, Cal Poly Pomona.
 Made using the flutter framework.
 
-Other resourced used in the project are listed:
+Other resources used in the project are listed:
 
 https://github.com/google/flutter-desktop-embedding.git
 
