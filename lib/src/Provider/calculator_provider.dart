@@ -37,14 +37,15 @@ class CalculatorNotifier extends StateNotifier<Calculator> {
         case '-':
         case '/':
         case '*':
-          if (state.stringBuffer
-              .substring(state.stringBuffer.length - 1)
+          if (state.stringBuffer.substring(state.stringBuffer.length - 1)
               .contains(RegExp(r'[+-/*]'))) {
-            return state.stringBuffer;
+                state.isDecimalAllowed = true;
+            return state.stringBuffer.substring(0, state.stringBuffer.length - 1) + buttonCharacter;
           } else if (state.stringBuffer == '0') {
             if (state.answerBuffer.contains(RegExp(r'(null|Infinity)'))) {
               return '0';
             } else {
+              state.isDecimalAllowed = true;
               return state.answerBuffer + buttonCharacter;
             }
           } else {
