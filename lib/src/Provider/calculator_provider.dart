@@ -33,6 +33,7 @@ class CalculatorNotifier extends StateNotifier<Calculator> {
           return state.stringBuffer == '0'
               ? buttonCharacter
               : state.stringBuffer + buttonCharacter;
+
         case '+':
         case '-':
         case '/':
@@ -52,6 +53,7 @@ class CalculatorNotifier extends StateNotifier<Calculator> {
             state.isDecimalAllowed = true;
             return state.stringBuffer + buttonCharacter;
           }
+
         case '.':
           if (state.isDecimalAllowed &&
               !state.stringBuffer
@@ -71,6 +73,7 @@ class CalculatorNotifier extends StateNotifier<Calculator> {
           } else {
             return '-${state.stringBuffer}';
           }
+
         case 'DEL':
           if (state.stringBuffer.length == 1) {
             return '0';
@@ -82,6 +85,7 @@ class CalculatorNotifier extends StateNotifier<Calculator> {
             return state.stringBuffer
                 .substring(0, state.stringBuffer.length - 1);
           }
+
         case '=':
           if (state.stringBuffer
                     .substring(state.stringBuffer.length - 1)
@@ -98,6 +102,7 @@ class CalculatorNotifier extends StateNotifier<Calculator> {
               return '0';
             }
           }
+
         case 'x^2':
           if (state.stringBuffer
                     .substring(state.stringBuffer.length - 1)
@@ -115,6 +120,7 @@ class CalculatorNotifier extends StateNotifier<Calculator> {
               return '0';
             }
           }
+
         case '1/x':
           if (state.stringBuffer
                     .substring(state.stringBuffer.length - 1)
@@ -132,6 +138,7 @@ class CalculatorNotifier extends StateNotifier<Calculator> {
               return '0';
             }
           }
+
         case 'sqrt':
           if (state.stringBuffer
                     .substring(state.stringBuffer.length - 1)
@@ -149,6 +156,7 @@ class CalculatorNotifier extends StateNotifier<Calculator> {
               return '0';
             }
           }
+          
         case 'C':
           state.answerBuffer = '0';
           state.isDecimalAllowed = true;
